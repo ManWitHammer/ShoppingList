@@ -1,18 +1,17 @@
-import { create } from 'zustand';
-import uuid from 'react-native-uuid';
+import { create } from 'zustand'
+import uuid from 'react-native-uuid'
 
 interface ShoppingItem {
-  id: string;
-  name: string;
-  purchased: boolean;
+  id: string
+  name: string
+  purchased: boolean
 }
 
 interface ShoppingStore {
-  items: ShoppingItem[];
-  addItem: (name: string) => void;
-  toggleItem: (id: string) => void;
-  removeItem: (id: string) => void;
-  getItemsByFilter: (filter?: 'all' | 'pending' | 'purchased') => ShoppingItem[];
+  items: ShoppingItem[]
+  addItem: (name: string) => void
+  toggleItem: (id: string) => void
+  removeItem: (id: string) => void
 }
 
 const useShoppingStore = create<ShoppingStore>((set, get) => ({
@@ -28,18 +27,8 @@ const useShoppingStore = create<ShoppingStore>((set, get) => ({
       ),
     })),
   removeItem: (id) =>
-    set((state) => ({ items: state.items.filter((item) => item.id !== id) })),
-  getItemsByFilter: (filter) => {
-    const items = get().items;
-    switch (filter) {
-      case 'pending':
-        return items.filter((item) => !item.purchased);
-      case 'purchased':
-        return items.filter((item) => item.purchased);
-      default:
-        return items;
-    }
-  },
-}));
+    set((state) => ({ items: state.items.filter((item) => item.id !== id) 
+  }))
+}))
 
-export default useShoppingStore;
+export default useShoppingStore

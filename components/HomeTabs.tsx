@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { MaterialIcons } from '@expo/vector-icons';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { DrawerActions } from '@react-navigation/native';
@@ -21,7 +21,7 @@ export default function HomeTabs() {
             onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
             style={{ marginLeft: 15 }}
           >
-            <MaterialIcons name="menu" size={24} color="#fff" /> 
+            <Icon name="menu" size={24} color="#fff" /> 
           </TouchableOpacity>
         ),
         tabBarStyle: { backgroundColor: '#282b30' },
@@ -35,8 +35,9 @@ export default function HomeTabs() {
         name="All"
         component={AllScreen}
         options={{
+          title: "Все",
           tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="list" size={size} color={color} />
+            <Icon name="list" size={size} color={color} />
           ),
         }}
       />
@@ -44,8 +45,9 @@ export default function HomeTabs() {
         name="Pending"
         component={PendingScreen}
         options={{
+          title: "Корзина",
           tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="pending-actions" size={size} color={color} />
+            <Icon name="shopping-cart" size={size} color={color} />
           ),
         }}
       />
@@ -53,8 +55,9 @@ export default function HomeTabs() {
         name="Purchased"
         component={PurchasedScreen}
         options={{
+          title: "Купленные",
           tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="done" size={size} color={color} />
+            <Icon name="check" size={size} color={color} />
           ),
         }}
       />

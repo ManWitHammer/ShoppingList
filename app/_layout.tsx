@@ -1,4 +1,3 @@
-import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import HomeTabs from '../components/HomeTabs';
 import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
@@ -12,11 +11,11 @@ export default function App() {
     <Drawer.Navigator
       drawerContent={(props) => <CustomDrawerContent {...props} />}
       screenOptions={{
-        drawerStyle: { backgroundColor: '#282b30' }, // Тёмный фон для drawer
+        drawerStyle: { backgroundColor: '#282b30' }, 
         swipeEdgeWidth: 100,
         drawerType: 'slide',
-        drawerActiveTintColor: '#7289da', // Основной цвет Discord для активного элемента
-        drawerInactiveTintColor: '#fff', // Белый цвет для неактивных элементов
+        drawerActiveTintColor: '#7289da', 
+        drawerInactiveTintColor: '#fff', 
       }}
     >
       <Drawer.Screen
@@ -50,7 +49,7 @@ export default function App() {
           headerShown: false,
           drawerLabel: 'Купленные',
           drawerIcon: ({ color, size }) => (
-            <Icon name="check-circle" size={size} color={color} />
+            <Icon name="check" size={size} color={color} />
           ),
         }}
       />
