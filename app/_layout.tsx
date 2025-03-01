@@ -1,15 +1,15 @@
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import HomeTabs from '../components/HomeTabs';
+import { Drawer } from 'expo-router/drawer';
 import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
 import { View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const Drawer = createDrawerNavigator();
+export const unstable_settings = {
+  initialRouteName: "toall", // Начальный экран
+};
 
-export default function App() {
+export default function AppLayout() {
   return (
-    <Drawer.Navigator
-      drawerContent={(props) => <CustomDrawerContent {...props} />}
+    <Drawer
       screenOptions={{
         drawerStyle: { backgroundColor: '#282b30' }, 
         swipeEdgeWidth: 100,
@@ -17,10 +17,10 @@ export default function App() {
         drawerActiveTintColor: '#7289da', 
         drawerInactiveTintColor: '#fff', 
       }}
+      drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
       <Drawer.Screen
-        name="HomeTabs"
-        component={HomeTabs}
+        name="toall"
         options={{
           headerShown: false,
           drawerLabel: 'Главная',
@@ -30,9 +30,7 @@ export default function App() {
         }}
       />
       <Drawer.Screen
-        name="PendingTabs"
-        component={HomeTabs}
-        initialParams={{ screen: 'Pending' }}
+        name="tonot-bought"
         options={{
           headerShown: false,
           drawerLabel: 'Не купленные',
@@ -42,9 +40,7 @@ export default function App() {
         }}
       />
       <Drawer.Screen
-        name="PurchasedTabs"
-        component={HomeTabs}
-        initialParams={{ screen: 'Purchased' }}
+        name="tobought"
         options={{
           headerShown: false,
           drawerLabel: 'Купленные',
@@ -53,7 +49,15 @@ export default function App() {
           ),
         }}
       />
-    </Drawer.Navigator>
+      <Drawer.Screen
+        name='(tabs)'
+        options={{ drawerItemStyle: { display: 'none' } }}
+      />
+      <Drawer.Screen
+        name='index'
+        options={{ drawerItemStyle: { display: 'none' } }}
+      />
+    </Drawer>
   );
 }
 

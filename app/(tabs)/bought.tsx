@@ -1,10 +1,11 @@
 import { View, StyleSheet } from 'react-native';
-import ShoppingList from '../components/ItemList';
+import ShoppingList from '../../components/ItemList';
 
-export default function PendingItems() {
+export default function PurchasedItems() {
   return (
+
       <View style={styles.container}>
-        <ShoppingList filter="pending" />
+        <ShoppingList filter="purchased" />
       </View>
   );
 }

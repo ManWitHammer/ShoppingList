@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import ShoppingList from '../components/ItemList';
-import AddItem from '../components/addItem';
+import ShoppingList from '../../components/ItemList';
+import AddItem from '../../components/addItem';
 
 export default function AllItems() {
   return (

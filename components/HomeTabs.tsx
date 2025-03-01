@@ -4,9 +4,9 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { DrawerActions } from '@react-navigation/native';
-import AllScreen from '../app/all';
-import PendingScreen from '../app/not-bought';
-import PurchasedScreen from '../app/bought';
+import AllScreen from '../app/(tabs)/all';
+import PendingScreen from '../app/(tabs)/not-bought';
+import PurchasedScreen from '../app/(tabs)/bought';
 
 const Tab = createBottomTabNavigator();
 
